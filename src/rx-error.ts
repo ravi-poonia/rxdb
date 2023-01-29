@@ -17,7 +17,7 @@ function parametersToString(parameters: any): string {
     if (Object.keys(parameters).length === 0)
         return ret;
     ret += 'Given parameters: {\n';
-    ret += Object.keys(parameters)
+    ret += Object.getOwnPropertyNames(parameters)
         .map(k => {
             let paramStr = '[object Object]';
             try {
