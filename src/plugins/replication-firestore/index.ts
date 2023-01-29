@@ -136,7 +136,6 @@ export function syncFirestore<RxDocType>(
                         where(serverTimestampField, '==', lastServerTimestamp),
                         where(primaryPath, '>', lastPulledCheckpoint.id),
                         orderBy(primaryPath, 'asc'),
-                        orderBy(serverTimestampField, 'asc'),
                         limit(batchSize)
                     );
                 } else {
